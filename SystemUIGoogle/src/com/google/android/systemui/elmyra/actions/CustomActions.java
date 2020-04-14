@@ -10,7 +10,7 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.TextUtils;
 
-import com.android.internal.util.bliss.BlissUtils;
+import com.android.internal.util.xtended.XtendedUtils;
 import com.android.systemui.Dependency;
 import com.android.systemui.assist.AssistManager;
 
@@ -46,7 +46,7 @@ public class CustomActions extends Action {
             default:
                 break;
             case 1: // Assistant
-                BlissUtils.switchScreenOn(getContext());
+                XtendedUtils.switchScreenOn(getContext());
                 mAssistManager.startAssist(new Bundle() /* args */);
                 break;
             case 2: // Voice search
@@ -55,42 +55,42 @@ public class CustomActions extends Action {
                 }
                 break;
             case 3: // Camera
-                BlissUtils.switchScreenOn(getContext());
+                XtendedUtils.switchScreenOn(getContext());
                 launchCamera(getContext());
                 break;
             case 4: // Flashlight
-                BlissUtils.toggleCameraFlash();
+                XtendedUtils.toggleCameraFlash();
                 break;
             case 5: // Clear notifications
-                BlissUtils.clearAllNotifications();
+                XtendedUtils.clearAllNotifications();
                 break;
             case 6: // Volume panel
                 if (isScreenOn) {
-                    BlissUtils.toggleVolumePanel(getContext());
+                    XtendedUtils.toggleVolumePanel(getContext());
                 }
                 break;
             case 7: // Screen off
                 if (isScreenOn) {
-                    BlissUtils.switchScreenOff(getContext());
+                    XtendedUtils.switchScreenOff(getContext());
                 }
                 break;
             case 8: // Notification panel
                 if (isScreenOn) {
-                    BlissUtils.toggleNotifications();
+                    XtendedUtils.toggleNotifications();
                 }
                 break;
             case 9: // Screenshot
                 if (isScreenOn) {
-                    BlissUtils.takeScreenshot(true);
+                    XtendedUtils.takeScreenshot(true);
                 }
                 break;
             case 10: // QS panel
                 if (isScreenOn) {
-                    BlissUtils.toggleQsPanel();
+                    XtendedUtils.toggleQsPanel();
                 }
                 break;
             case 11: // Ringer modes
-                BlissUtils.toggleRingerModes(getContext());
+                XtendedUtils.toggleRingerModes(getContext());
                 break;
         }
     }
